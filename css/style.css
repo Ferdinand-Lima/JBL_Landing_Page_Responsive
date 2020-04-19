@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,900&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Roboto', sans-serif;
+	background-image: linear-gradient(150deg,#4B6CB7, #182848, #182848);
+}
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+header{
+	background-color: #182848;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 15px;
+}
+header .btn_menu{
+	display: none;
+}
+.nav_menu ul{
+	background-color: rgba(24,40,72, 0.9);
+	list-style-type: none;
+	display: flex;
+	flex-flow: row wrap;http://localhost:3000/img/fone.png
+	justify-content: space-around;
+}
+.nav_menu ul a{
+	display: block;
+    text-decoration: none;
+    color: white;
+    margin: 5px 30px;
+}
+.nav_menu ul a:after{
+	content: "";
+	display: block;
+	width: 0;
+	height: 2px;
+	margin: 5px auto ;
+	background-color: #FF3300;
+	transition: .3s;
+}
+.nav_menu ul a:hover:after{
+	width: 100%;
+}
+@keyframes showleft{
+	from{
+      opacity: 0;
+      transform: translateX(-100px);
+	}
+	to{
+      opacity: 1;
+      transform: translateX(0);
+	}
+}
+@keyframes showlRight{
+	from{
+      opacity: 0;
+      transform: translateX(100px);
+	}
+	to{
+      opacity: 1;
+      transform: translateX(0);
+	}
+}
+.product_info{
+	animation: showlRight 1s forwards;
+}
+section.product{
+	/*height: 100vh;*/
+	text-align: right;
+	color: white;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+section.product img.fone{
+	max-width: 100%;
+	animation: showleft 1s forwards;
+}
+section.product h1{
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 4rem;
+  margin: 30px;
+}
+section.product p{ 
+  font-size: 1.4rem;
+  line-height: 25px;
+  margin: 10px;
+}
+section.product a{ 
+  display: block;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  background-color: #FF3300;
+  padding: 15px 20px;
+  border-radius: 30px;
+  border:2px solid #fff;
+  width: 200px;
+  margin: 50px auto;
+  transition: background-color .3s;
+  text-transform: uppercase;
+}
+section.product a:hover{
+  background-color: #FF491C;
+}
+section.product .textOverlay{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;; 
+  font-size: 11rem;
+  color: #999999;
+  width: 100%;
+  position: absolute;
+  left: -50%;
+  z-index: -1;
+  mix-blend-mode: soft-light;
+  transform: translateX(50%);
+}
+@keyframes arrowDown{
+	0%{
+      transform: translateY(-30px);
+	}
+	50%{
+      transform: translateY(0);
+      
+	}
+	100%{
+      transform: translateY(-30px);
+      
+	}
+}
+.icon_wraper{
+	width: 100%;
+	text-align: center;
+}
+.arrow_dow{
+	animation: arrowDown 1.5s infinite;
+	cursor: pointer;
+}
+section.about{
+	background-image: url(../img/background.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-size: 1.2rem;
+	color: white;
+	padding: 150px 20px;
+}
+section.about .about_info{
+	max-width: 50%;
+	padding: 50px 0px;
+}
+section.about .about_info h2{
+	font-family: 'Montserrat', sans-serif; 
+	font-weight: 500;
+	margin: 30px 0px;
+	font-size: 3rem;
+}
+section.about .about_info h2:after{
+	content: "";
+	display: block;
+	width: 30%;
+	height: 2px;
+	background-color: #FF3300; 
+	margin-top: 5px;
+}
+section.about .about_info p{
+	margin-bottom: 20px;
+	line-height: 30px;
+}
+section.about .about_info a{
+	display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #FF3300;
+    padding: 5px 5px;
+    border-radius: 20px;
+    width: 150px;
+    border:2px solid #fff;
+    margin: 30px 0;
+    transition: background-color .3s;
+    text-transform: uppercase;
+}
+footer{
+	background-color: #182848;
+	color: #fff;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px 20px;
+}
+footer .logo_footer{
+	width: 80px;
+}
+footer ul li{
+	margin: 10px;
+}
+footer ul a{
+	text-decoration: none;
+	color: white;
+}
+footer .nav_contact img{
+	margin-right: 5px;
+}
+
+/*Media Screen Mobile*/
+.btn_menu{
+	display: block;
+	color: white;
+	width: 36px;
+	height: 36px;
+	border-top: 4px solid;
+	margin: 20px 20px 0 0;
+	float: left;
+	position: relative;
+	cursor: pointer;
+	-webkit-backface-visibility: hidden;
+}
+.btn_menu::after, .btn_menu::before{
+	content: "";
+	display: block;
+	height: 4px;
+	margin-top: 6px;
+	background-color: currentColor;
+	position: relative;
+	transition: transform .2s ease;
+}
+.btn_menu.active{
+	border-top: transparent;
+}
+.btn_menu.active::after{
+	margin-top: 0px;
+	top: 2px;
+	transform: rotate(45deg);
+}
+.btn_menu.active::before{
+	margin-top: 0px;
+	top: 6px;
+	transform: rotate(135deg);
+}
+
+
+
+@media only screen and (max-width: 1200px){
+
+section.product{
+	text-align: center;
+	flex-flow: column;
+	justify-content: space-around;
+	
+}
+ section.product img.fone{
+ 	display: block;
+	max-width: 90%;
+	margin: 0 auto;
+
+}
+section.product h1{
+  font-size: 6rem;
+  text-align: center;
+  margin: 0;
+}
+section.about .about_info{
+	max-width: 100%;
+	padding: 20px 0px;
+}
+section.about .about_info a{
+	margin: 0 auto;
+}
+}
+
+@media only screen and (max-width: 500px){
+
+header .btn_menu{
+	display: block;
+}
+
+@keyframes showUp{
+	from{
+      opacity: 0;
+      transform: translateY(-100px);
+	}
+	to{
+      opacity: 1;
+      transform: translateY(0);
+	}
+}
+
+ header .nav_menu ul{
+	display: none;
+  }
+
+  header .nav_menu ul.active{
+  	text-align: center;
+  	position: absolute;
+  	top: 55px;
+  	left: 0;
+  	z-index: 999;
+  	width: 100%;
+  	height: 100Vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: center;
+	animation: showUp .3s forwards;
+  }
+ section.product{
+	text-align: center;
+	flex-flow: column;
+	justify-content: space-around;
+	
+}
+ section.product img.fone{
+ 	display: block;
+	max-width: 90%;
+	margin: 0 auto;
+
+}
+section.product .textOverlay{ 
+  font-size: 3rem;
+  top: 20%;
+}
+section.product h1{
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0;
+}
+section.about{
+	background-size: contain;
+	padding: 0 20px;
+}
+section.about .about_info{
+	max-width: 100%;
+	padding: 20px 0px;
+}
+section.about .about_info a{
+	margin: 0 auto;
+}
+footer .nav_footer{
+	display: none;
+}
+}
+
